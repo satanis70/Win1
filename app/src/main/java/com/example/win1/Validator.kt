@@ -4,7 +4,7 @@ import android.content.Context
 import android.widget.Toast
 
 object Validator {
-    fun validate(name: String, height: String, weight: String, context: Context): Boolean {
+    fun validatePersonalData(name: String, height: String, weight: String, context: Context): Boolean {
         return if (name.isEmpty()){
             Toast.makeText(context, "Укажите имя", Toast.LENGTH_SHORT).show()
             false
@@ -14,6 +14,17 @@ object Validator {
         } else if(weight.isEmpty()){
             Toast.makeText(context, "Укажите вес", Toast.LENGTH_SHORT).show()
             false
+        } else {
+            true
+        }
+    }
+    fun validateAnalyticsData(distance: String, sitUps: String, context: Context): Boolean {
+        return if (distance.isEmpty()) {
+            Toast.makeText(context, "Укажите расстояние", Toast.LENGTH_SHORT).show()
+            return false
+        } else if (sitUps.isEmpty()) {
+            Toast.makeText(context, "Укажите количество приседаний", Toast.LENGTH_SHORT).show()
+            return false
         } else {
             true
         }

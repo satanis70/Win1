@@ -4,9 +4,16 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.ViewGroupCompat
+import androidx.core.view.marginTop
+import androidx.core.view.setMargins
 import com.example.win1.api.TrainingApi
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.activity_training.*
@@ -27,7 +34,20 @@ class TrainingActivity : AppCompatActivity() {
         val text = "<font color=#ffffff>WIN</font><font color=#F15400>SPORT</font>"
         textView_training_win.text = Html.fromHtml(text)
         val day = getCurrentDay()
+        val layoutParamsImage = imageView_training.layoutParams as ConstraintLayout.LayoutParams
+        val layoutParamsTv = textView_training.layoutParams as ConstraintLayout.LayoutParams
         getData()
+        button_training_dropdown.setOnClickListener {
+            textView_training.maxLines = 500
+            layoutParamsImage.setMargins(0, 50, 0, 0)
+            imageView_training.layoutParams = layoutParamsImage
+            layoutParamsTv.setMargins(0,50,0,0)
+            textView_training.layoutParams = layoutParamsTv
+            nestedScrollView.layoutParams = ViewGroup
+                .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT)
+            textView_training_win.visibility = View.INVISIBLE
+        }
     }
 
     private fun getData() {

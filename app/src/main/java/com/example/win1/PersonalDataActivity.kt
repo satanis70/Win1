@@ -23,7 +23,7 @@ class PersonalDataActivity : AppCompatActivity() {
             val name = editText_name.text.toString()
             val height = editText_height.text.toString()
             val weight = editText_weight.text.toString()
-            if (Validator.validate(name, height, weight, this)){
+            if (Validator.validatePersonalData(name, height, weight, this)){
                 val sharedPreferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
                 sharedPreferences.edit {
                     putString("name", name)
