@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.edit
 import com.example.win1.api.TrainingApi
@@ -54,8 +55,14 @@ class TrenerActivity : AppCompatActivity() {
                     Log.i("data", data!!.response)
                     launch(Dispatchers.Main) {
                         delay(1000)
+                        textView_response_title.visibility = View.VISIBLE
                         textViewQuery.text = query
-                        textViewResp.text = data.response
+                        if (data.response.isEmpty()){
+                            textViewResp.text = "Ответ обрабатывается"
+                        } else {
+                            textViewResp.text = data.response
+                        }
+
                     }
 
                 }

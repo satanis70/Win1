@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_personal_data.*
 
 
 class PersonalDataActivity : AppCompatActivity() {
+    var k = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_data)
@@ -33,6 +34,15 @@ class PersonalDataActivity : AppCompatActivity() {
                 }
                 startActivity(Intent(context, MenuActivity::class.java))
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        k++
+        if (k==1){
+            Toast.makeText(this, "Нажмите кнопку назад еще раз что бы выйти", Toast.LENGTH_LONG).show();
+        } else{
+            this.finishAffinity()
         }
     }
 }

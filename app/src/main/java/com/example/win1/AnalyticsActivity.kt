@@ -26,6 +26,8 @@ class AnalyticsActivity : AppCompatActivity() {
 
         val text2 = "<font color=#ffffff>ПРОГРЕСС:</font><font color=#F15400>${progressMemory}Р</font>"
         textView_analytics_progress.text = Html.fromHtml(text2)
+        progressBarAnalytics.max = 25000
+        progressBarAnalytics.progress = progressMemory!!.toInt()
 
         button_input_data.setOnClickListener {
             val distance = editText_distance.text.toString()
@@ -34,6 +36,8 @@ class AnalyticsActivity : AppCompatActivity() {
                 val progress = ((distance.toInt()+sitUps.toInt())*10*weight!!.toInt())/10
                 Log.i("progress", progress.toString())
                 progressMemory = (progressMemory!!.toInt()+progress).toString()
+                progressBarAnalytics.max = 25000
+                progressBarAnalytics.progress = progressMemory!!.toInt()
                 Log.i("progressMemory", progressMemory.toString())
                 val text3 = "<font color=#ffffff>ПРОГРЕСС:</font><font color=#F15400>${progressMemory}Р</font>"
                 textView_analytics_progress.text = Html.fromHtml(text3)

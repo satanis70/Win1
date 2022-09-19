@@ -104,9 +104,8 @@
             android:id="@+id/textView_query"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
             android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="14dp"
             android:textColor="#F15400"
             android:textSize="20sp"
@@ -117,19 +116,33 @@
             app:layout_constraintTop_toBottomOf="@+id/textView_responseHistory"></TextView>
 
         <TextView
+            android:id="@+id/textView_response_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="14dp"
+            android:text="ОТВЕТ:"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_query"></TextView>
+
+        <TextView
             android:id="@+id/textView_response"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="14dp"
-            android:text="Ответ обрабатывается"
-            android:gravity="center"
-            android:textStyle="bold"
+            android:layout_marginTop="8dp"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView_query"
-            tools:layout_editor_absoluteX="0dp"></TextView>
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_response_title"></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -17,22 +17,32 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name=".TrenerActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".AnalyticsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".TrainingActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".PersonalDataActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,10 +54,10 @@
             android:name=".MainActivity"
             android:exported="true" />
 
-        <receiver android:name=".ClearData"
+        <receiver
+            android:name=".ClearData"
             android:enabled="true"
-            android:exported="true">
-        </receiver>
+            android:exported="true"></receiver>
     </application>
 
 </manifest>
